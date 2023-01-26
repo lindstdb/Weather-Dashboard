@@ -27,17 +27,28 @@
                 <form>
                     <label id="search-header" for="search-city">Search for a City: </label>
                     <div class="form-row">
-                        <input id="search-city" class="form-control" name="city" value="Frisco"></input>
+                        <input id="search-city" class="form-control" name="city" value=""></input>
                             <div class="d-grid gap-1">
-                                <button class="btn btn-primary" type="button">Search</button>
+                                <button id="search-btn" class="btn btn-primary" type="button">Search</button>
                             </div>
                     </div>
                 </form>
+
+                <ul id="city-results" class="list-group mt-4"></ul>
+                <a id="clear-storage" href="#"></a>
             </div>
+
+            <div id="weather-content" class="card">
+                <div id="current-weather" class="card-body col-sm-6">
+                </div>
+            </div>
+            <div id="five-day-forecast" class="mt-5"></div>
 
         </div>
 
     </div>
 
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>        
+<script src="Assets\js\script.js"></script>
 </body>
