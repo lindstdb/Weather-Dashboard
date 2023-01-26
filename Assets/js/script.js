@@ -3,7 +3,7 @@ document.getElementById("search-btn").addEventListener("click", function(){
     var city = document.getElementById("search-city").value;
     var apiKey = "89d50142569fa3c82f98613f7f3059b0";
     var limit = 1;
-    var url = "http://api.openweathermap.org/geo/1.0/direct?q=" + city + "&limit=" + limit + "&appid=" + apiKey;
+    var url = "https://api.openweathermap.org/geo/1.0/direct?q=" + city + "&limit=" + limit + "&appid=" + apiKey;
     
     fetch(url)
       .then(function(response) {
@@ -12,7 +12,7 @@ document.getElementById("search-btn").addEventListener("click", function(){
       .then(function(data) {
         var lat = data[0].lat;
         var lon = data[0].lon;
-        var weatherUrl = "http://api.openweathermap.org/data/2.5/forecast?units=imperial&lat=" + lat + "&lon=" + lon + "&appid=" + apiKey;
+        var weatherUrl = "https://api.openweathermap.org/data/2.5/forecast?units=imperial&lat=" + lat + "&lon=" + lon + "&appid=" + apiKey;
         
 
         fetch(weatherUrl)
@@ -23,7 +23,7 @@ document.getElementById("search-btn").addEventListener("click", function(){
             var cityName = weatherData.city.name;
             var currentWeather = weatherData.list[0];
             var date = currentWeather.dt_txt;
-            var icon = "http://openweathermap.org/img/wn/" + currentWeather.weather[0].icon + ".png";
+            var icon = "https://openweathermap.org/img/wn/" + currentWeather.weather[0].icon + ".png";
             var temperature = currentWeather.main.temp;
             var humidity = currentWeather.main.humidity;
             var windSpeed = currentWeather.wind.speed;
@@ -51,7 +51,7 @@ document.getElementById("search-btn").addEventListener("click", function(){
             for (let i = 1; i < weatherData.list.length; i++) {
               var forecast = weatherData.list[i];
               var forecastDate = weatherData.list[i].dt_txt;
-              var forecastIcon = "http://openweathermap.org/img/wn/" + forecast.weather[0].icon + ".png";
+              var forecastIcon = "https://openweathermap.org/img/wn/" + forecast.weather[0].icon + ".png";
               var forecastTemperature = forecast.main.temp;
               var forecastHumidity = forecast.main.humidity;
               var forecastWindSpeed = forecast.wind.speed;
